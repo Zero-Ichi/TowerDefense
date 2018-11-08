@@ -2,7 +2,7 @@
 
 public class Waypoints : MonoBehaviour
 {
-    public static Transform[] Points { get; set; }
+    public static Transform[] Points;
 
     // Awake est appelé quand l'instance de script est chargée
     private void Awake()

@@ -21,7 +21,6 @@ public abstract class WalkerBase : MonoBehaviour
     // Start est appelé juste avant qu'une méthode Update soit appelée pour la première fois
     protected virtual void Start()
     {
-        Debug.Log(type);
         waypoints = Waypoints.Points;
         if (type == WalkerType.Friend)
         {
