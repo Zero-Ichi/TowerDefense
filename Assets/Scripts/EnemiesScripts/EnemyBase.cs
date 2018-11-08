@@ -33,7 +33,14 @@ public class EnemyBase : MonoBehaviour
 
     private void GetNextWaypoint()
     {
-        waypointIndex++;
-        Target = Waypoints.Points[waypointIndex];
+        if (waypointIndex >= Waypoints.Points.Length - 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            waypointIndex++;
+            Target = Waypoints.Points[waypointIndex];
+        }
     }
 }
