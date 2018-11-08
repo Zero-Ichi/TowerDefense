@@ -1,22 +1,33 @@
-﻿using System;
+﻿using Assets.Scripts.Enums;
+using System;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public abstract class WalkerBase : MonoBehaviour
 {
 
     [SerializeField]
     public float speed = 10f;
     [SerializeField]
+    public WalkerType type;
+
+    [SerializeField]
     protected float PV = 100f;
 
     protected int waypointIndex = 0;
+    protected Transform[] waypoints;
 
     public Transform Target { get; set; }
 
     // Start est appelé juste avant qu'une méthode Update soit appelée pour la première fois
     protected virtual void Start()
     {
-        Target = Waypoints.Points[waypointIndex];
+        Debug.Log(type);
+        waypoints = Waypoints.Points;
+        if (type == WalkerType.Friend)
+        {
+            Array.Reverse(waypoints);
+        }
+        Target = waypoints[waypointIndex];
     }
 
     // Update est appelé pour chaque trame, si le MonoBehaviour est activé
@@ -33,14 +44,14 @@ public class EnemyBase : MonoBehaviour
 
     private void GetNextWaypoint()
     {
-        if (waypointIndex >= Waypoints.Points.Length - 1)
+        if (waypointIndex >= waypoints.Length - 1)
         {
             Destroy(gameObject);
         }
         else
         {
             waypointIndex++;
-            Target = Waypoints.Points[waypointIndex];
+            Target = waypoints[waypointIndex];
         }
     }
 }
