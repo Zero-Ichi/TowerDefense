@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114596866166926024}
   m_Layer: 0
   m_Name: EnemyStandard
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  type: 1
+  range: 5
   PV: 100
 --- !u!135 &135096084032583626
 SphereCollider:

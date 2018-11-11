@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114183605318025292}
   m_Layer: 0
   m_Name: FriendStandard
-  m_TagString: Untagged
+  m_TagString: Friend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  type: 0
+  range: 5
   PV: 100
 --- !u!135 &135348496895172838
 SphereCollider:
