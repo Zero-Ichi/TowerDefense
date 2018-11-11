@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    public static Transform[] Points;
+    private static Transform[] Points;
 
     // Awake est appelé quand l'instance de script est chargée
     private void Awake()
@@ -15,5 +16,11 @@ public class Waypoints : MonoBehaviour
         }
     }
 
+    public static Transform[] GetPoints()
+    {
+        Transform[] arrayToReturn = new Transform[Points.Length];
+        Array.Copy(Points, arrayToReturn, Points.Length);
+        return arrayToReturn;
+    }
 
 }
