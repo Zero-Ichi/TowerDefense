@@ -7,11 +7,15 @@ public abstract class WalkerBase : MonoBehaviour
     public float speed = 10f;
     [SerializeField]
     public float range = 5f;
-
     [SerializeField]
-    protected float PV = 100f;
+    protected float fireRate = 1f;
+    [SerializeField]
+    protected float damages = 15f;
+    [SerializeField]
+    protected float PV = 15f;
 
-
+    protected float TurnSpeed = 10f;
+    protected float FireCountdown = 0;
     protected int waypointIndex = 0;
 
 
@@ -44,6 +48,12 @@ public abstract class WalkerBase : MonoBehaviour
     protected virtual void Update()
     {
         Vector3 dir = WaypointTarget.position - transform.position;
+        
+        // Look to target
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * TurnSpeed).eulerAngles;
+        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
         if (IsWalking)
         {
             transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
@@ -53,6 +63,8 @@ public abstract class WalkerBase : MonoBehaviour
         {
             GetNextWaypoint();
         }
+
+        
     }
 
     /// <summary>
