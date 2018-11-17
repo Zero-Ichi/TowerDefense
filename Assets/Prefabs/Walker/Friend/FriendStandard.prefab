@@ -42,12 +42,40 @@ GameObject:
   - component: {fileID: 23121491769145824}
   - component: {fileID: 65903486328719450}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1892803999687792
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4391973253628006}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4391973253628006
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892803999687792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0.654}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4730655811610300}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4561946060851298
 Transform:
   m_ObjectHideFlags: 1
@@ -55,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142704242302234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.60056, y: -1.0780279e-17, z: 48.55006}
+  m_LocalPosition: {x: 93.572266, y: 2.0211413, z: 44.31057}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4730655811610300}
@@ -71,7 +99,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.333, y: 0.25, z: 0.167}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 4391973253628006}
   m_Father: {fileID: 4561946060851298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -182,6 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f86d1557d8073428198e1e762c0ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1769502055450424, guid: ad5a534bd225faf4bbade6d95b4ebaae,
+    type: 2}
+  firePoint: {fileID: 4391973253628006}
   speed: 20
   range: 5
   fireRate: 1
