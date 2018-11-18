@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Friend
-  - Enemy
+  - WalkerFriend
+  - WalkerEnemy
+  - TurretFriend
+  - TurretEnemy
   layers:
   - Default
   - TransparentFX

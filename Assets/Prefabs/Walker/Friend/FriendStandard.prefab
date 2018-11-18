@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114183605318025292}
   m_Layer: 0
   m_Name: FriendStandard
-  m_TagString: Friend
+  m_TagString: WalkerFriend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1769502055450424, guid: ad5a534bd225faf4bbade6d95b4ebaae,
     type: 2}
   firePoint: {fileID: 4391973253628006}
-  speed: 20
+  speed: 10
   range: 5
   fireRate: 1
   damages: 15

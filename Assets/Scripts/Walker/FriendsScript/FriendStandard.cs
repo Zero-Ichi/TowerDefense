@@ -4,9 +4,10 @@ using UnityEngine;
 public class FriendStandard : WalkerBase
 {
 
-    private void Awake()
+    protected override void Awake()
     {
-        this.TargetTag = Tags.Enemy;
+        base.Awake();
+        this.TargetTag = Tags.WalkerEnemy;
     }
 
 

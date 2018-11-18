@@ -39,7 +39,7 @@ public abstract class WalkerBase : MonoBehaviour
     public Transform WaypointTarget { get; set; }
 
     // Awake est appelé quand l'instance de script est chargée
-    private void Awake()
+    protected virtual void Awake()
     {
         IsWalking = true;
     }

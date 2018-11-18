@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyStandard : WalkerBase
 {
-    private void Awake()
+    protected override void Awake()
     {
-        this.TargetTag = Tags.Friend;
+        base.Awake();
+        this.TargetTag = Tags.WalkerFriend;
     }
     // Start est appelé juste avant qu'une méthode Update soit appelée pour la première fois
     protected override void Start()
