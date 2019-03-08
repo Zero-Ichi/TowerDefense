@@ -2,7 +2,10 @@
 {
     public enum Tags
     {
-        Enemy,
-        Friend
+        WalkerEnemy,
+        WalkerFriend,
+        TurretEnemy,
+        TurretFriend,
+        
     }
 }

@@ -1,41 +1,14 @@
 ﻿using Assets.Scripts.Config;
 using UnityEngine;
 
-public class FriendStandard : WalkerBase {
+public class FriendStandard : WalkerBase
+{
 
-    protected override void OpposeWalkerInRange()
+    protected override void Awake()
     {
-        //Find all GameObject with this tag
-        GameObject[] opposeWalkers = GameObject.FindGameObjectsWithTag(Tags.Enemy.ToString());
-
-        //initialisation shortestDistance to inifinit value
-        float shortestDistance = float.PositiveInfinity;
-
-        GameObject nerestOpposeWalker = null;
-
-        foreach (GameObject item in opposeWalkers)
-        {
-            //Get distance between 2 vector3
-            float DistanceToOppeseWalker = Vector3.Distance(transform.position, item.transform.position);
-
-            if (DistanceToOppeseWalker < shortestDistance)
-            {
-                shortestDistance = DistanceToOppeseWalker;
-                nerestOpposeWalker = item;
-            }
-        }
-        // If one gameobject find and if is in range
-        if (nerestOpposeWalker != null && shortestDistance <= this.range)
-        {
-            this.OpposeWalkerTarget = nerestOpposeWalker;
-            this.IsWalking = false;
-        }
-        else
-        {
-            this.IsWalking = true;
-        }
+        base.Awake();
+        this.TargetTag = Tags.WalkerEnemy;
     }
-
 
 
     // Start est appelé juste avant qu'une méthode Update soit appelée pour la première fois
